@@ -1,45 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bliss Arcade</title>
-<link rel="stylesheet" href="style.css">
-<link rel="icon" href="assets/favicon.png">
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-</head>
-<body>
+<!doctype html>
+<span>Players: 24</span>
+<a class="btn small" href="#play">Play</a>
+</div>
+</article>
 
-<header>
-    <h1>Bliss Arcade</h1>
-    <nav>
-        <ul>
-            <li><a href="#games">Games</a></li>
-            <li><a href="#about">About</a></li>
-        </ul>
-    </nav>
-</header>
 
-<section id="hero">
-    <h2>Welcome to Bliss Arcade</h2>
-    <p>The ultimate free online gaming hub!</p>
+<article class="card">
+<img src="assets/images/game2.jpg" alt="Game 2">
+<h3>Skybreak Rally</h3>
+<p>Anti-grav racing with trick scoring and weekly tournaments.</p>
+<div class="card-foot">
+<span>Players: 8</span>
+<a class="btn small" href="#play">Play</a>
+</div>
+</article>
+
+
+<article class="card">
+<img src="assets/images/game3.jpg" alt="Game 3">
+<h3>Fortress Forge</h3>
+<p>Co-op tower defense — craft traps, defend the core, blame your friends.</p>
+<div class="card-foot">
+<span>Players: 4</span>
+<a class="btn small" href="#play">Play</a>
+</div>
+</article>
+</div>
 </section>
 
-<section id="games">
-    <h2>Featured Games</h2>
-    <div class="game-grid" id="game-grid">
-        <!-- JS will populate games here -->
-    </div>
+
+<section class="tournaments container" id="tournaments">
+<h2>Live tournaments</h2>
+<div class="ticker">
+<div class="event">Weekly Arena — Sat, 7:00 PM CDT — Prize: $200</div>
+<div class="event">Rally Time Trial — Sun, 4:00 PM CDT — Top 3 skins</div>
+</div>
 </section>
 
-<section id="about">
-    <h2>About Bliss Arcade</h2>
-    <p>Bliss Arcade is your one-stop hub for free online games, from retro classics to modern hits. Play, explore, and level up your fun!</p>
-</section>
 
-<footer>
-    <p>&copy; 2025 Bliss Arcade</p>
+<section class="devlog container" id="devlog">
+<h2>Devlog</h2>
+<article class="post">
+<h3>Patch 1.14: Joypads now explode less</h3>
+<p class="muted">Oct 7, 2025 — Live now: stability fixes, latency smoothing, and one less button that deletes your profile.</p>
+<a class="readmore" href="#">Read full notes</a>
+</article>
+</section>
+</main>
+
+
+<footer class="site-footer container">
+<div class="foot-left">© <span id="year"></span> ArcForge — Built with caffeine and regret.</div>
+<div class="foot-right">
+<a href="#">Privacy</a>
+<a href="#">Terms</a>
+<a href="#">Contact</a>
+</div>
 </footer>
+
 
 <script src="script.js"></script>
 </body>
