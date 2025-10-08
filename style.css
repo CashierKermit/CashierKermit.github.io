@@ -1,29 +1,54 @@
-/* Reset & Fonts */
-* { margin:0; padding:0; box-sizing:border-box; font-family: 'Press Start 2P', cursive; }
-body { background:#0d0d1a; color:#fff; line-height:1.5; }
+/* Minimal, modern, responsive CSS. Uses CSS variables for quick theming. */
+:root{
+--bg:#0f1115; --card:#0f1418; --muted:#9aa3b2; --accent:#6ef; --glass: rgba(255,255,255,0.03);
+--maxw:1100px;
+--radius:12px;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
+body{background:linear-gradient(180deg,#060608 0%,#0d0f12 100%);color:#e6edf3;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--maxw);margin:0 auto;padding:28px}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;gap:10px;align-items:center;color:inherit;text-decoration:none}
+.brand img{height:36px}
+.nav{display:flex;gap:18px;align-items:center}
+.nav a{color:var(--muted);text-decoration:none}
+.nav .cta{background:linear-gradient(90deg,var(--accent),#7af);padding:10px 14px;border-radius:999px;color:#071127}
+.mobile-toggle{display:none;background:none;border:none;color:var(--muted);font-size:20px}
 
-/* Header */
-header { display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; background:#11112a; }
-header h1 { color:#00ffe0; font-size:1.8rem; }
-nav ul { display:flex; gap:1rem; }
-nav a { color:#fff; text-decoration:none; transition:0.2s; }
-nav a:hover { color:#00ffe0; text-shadow: 0 0 8px #00ffe0; }
 
-/* Hero Section */
-#hero { text-align:center; padding:4rem 2rem; }
-#hero h2 { font-size:2.5rem; color:#00ffe0; text-shadow: 0 0 10px #00ffe0; margin-bottom:1rem; }
+.hero{padding:48px 0}
+.hero-grid{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
+.hero-copy h1{font-size:40px;margin:0 0 12px}
+.hero-copy p{color:var(--muted);line-height:1.45}
+.hero-media img{width:100%;border-radius:16px;box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none}
+.btn.primary{background:linear-gradient(90deg,var(--accent),#7af);color:#071127}
+.btn.ghost{border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+.btn.small{padding:6px 10px;font-size:14px}
 
-/* Game Grid */
-.game-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:2rem; padding:2rem; }
-.game-card { background:#11112a; border:2px solid #00ffe0; border-radius:15px; overflow:hidden; text-align:center; transition: transform 0.3s, box-shadow 0.3s; }
-.game-card:hover { transform: scale(1.05); box-shadow: 0 0 20px #00ffe0; }
-.game-card img { width:100%; display:block; }
-.game-card h3 { margin:1rem 0; color:#00ffe0; font-size:0.9rem; }
-.game-card a { display:inline-block; margin-bottom:1rem; padding:0.5rem 1rem; background:#00ffe0; color:#11112a; text-decoration:none; border-radius:5px; font-weight:bold; transition:0.2s; }
-.game-card a:hover { background:#00b3a0; color:#fff; }
 
-/* About Section */
-#about { padding:3rem 2rem; text-align:center; }
+.features h2,.tournaments h2,.devlog h2{margin-top:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--card);padding:12px;border-radius:12px}
+.card img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+.card h3{margin:10px 0 6px}
+.card p{color:var(--muted);font-size:14px}
+.card-foot{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
 
-/* Footer */
-footer { text-align:center; padding:2rem; background:#11112a; margin-top:2rem; font-size:0.8rem; color:#00ffe0; }
+
+.ticker{background:var(--glass);padding:12px;border-radius:10px;color:var(--muted)}
+.post{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:14px;border-radius:12px}
+.muted{color:var(--muted);font-size:13px}
+.site-footer{display:flex;justify-content:space-between;color:var(--muted);padding:20px 0}
+
+
+@media (max-width:980px){
+.hero-grid{grid-template-columns:1fr}
+.grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+.nav{display:none}
+.mobile-toggle{display:block}
+.grid{grid-template-columns:1fr}
+}
